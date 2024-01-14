@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Socket.IO CSV Client</title>
+    <script src="https://cdn.socket.io/4.1.2/socket.io.min.js"></script>
+</head>
+<body>
+    <script>
+        const socket = io('http://localhost:8765');
+
+        socket.on('csvData', (rowData) => {
+            console.log(rowData);
+        });
+
+        socket.on('disconnect', () => {
+            console.error('Socket.IO connection closed');
+        });
+    </script>
+</body>
+</html>
